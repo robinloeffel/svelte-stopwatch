@@ -2,8 +2,8 @@
   "name": "svelte-stopwatch",
   "version": "1.0.0",
   "description": "A stopwatch written in Svelte",
-  "main": "index.js",
-  "repository": "https://github.com/robinloeffel/svelte-stopwatch",
+  "main": "src/index.js",
+  "repository": "robinloeffel/svelte-stopwatch",
   "author": "Robin Löffel",
   "license": "MIT",
   "devDependencies": {
@@ -27,21 +27,22 @@
   },
   "eslintConfig": {
     "extends": "sweet/web",
-    "plugins": [
-      "svelte3"
-    ],
-    "overrides": [
-      {
-        "files": "rollup.config.js",
-        "extends": "sweet/node",
-        "rules": {
-          "node/no-unsupported-features/es-syntax": "off"
-        }
-      },
-      {
-        "files": "*.svelte",
-        "processor": "svelte3/svelte3"
+    "plugins": ["svelte3"],
+    "overrides": [{
+      "files": ["rollup.config.js"],
+      "extends": "sweet/node",
+      "rules": {
+        "node/no-unsupported-features/es-syntax": "off"
       }
-    ]
+    }, {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3",
+      "rules": {
+        "import/exports-last": "off",
+        "import/first": "off",
+        "import/no-mutable-exports": "off",
+        "unicorn/filename-case": "off"
+      }
+    }]
   }
 }
