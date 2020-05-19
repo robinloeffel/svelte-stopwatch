@@ -4,7 +4,7 @@
   const dispatcher = createEventDispatcher();
 
   export let label = 'I\'m button';
-  export let type;
+  export let type = 'pause';
 
   const startTimer = () => {
     dispatcher('startTimer');
